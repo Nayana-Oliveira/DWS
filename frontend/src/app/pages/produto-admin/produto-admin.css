@@ -5,10 +5,10 @@
 }
 
 .sidebar {
-  width: 250px;
+  width: 240px;
   background: white;
   border-right: 1px solid #ddd;
-  padding: 24px;
+  padding: 22px;
 
   display: flex;
   flex-direction: column;
@@ -18,40 +18,39 @@
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 42px;
+  gap: 10px;
+  margin-bottom: 38px;
 }
 
 .logo-area img {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 }
 
 .logo-area h2 {
   color: #df1b57;
-  font-size: 2rem;
+  font-size: 1.55rem;
   font-weight: 800;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .menu-item {
-  height: 56px;
+  height: 50px;
   border-radius: 14px;
-  padding: 0 18px;
+  padding: 0 16px;
 
   display: flex;
   align-items: center;
-  gap: 12px;
 
   text-decoration: none;
   color: #333;
 
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
 
   transition: 0.2s;
@@ -69,32 +68,32 @@
 
 .content {
   flex: 1;
-  padding: 32px;
+  padding: 26px;
 }
 
 .top-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .header-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #111;
 }
 
 .top-header p {
-  margin-top: 8px;
+  margin-top: 6px;
   color: #8d8d8d;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .cancelar-btn {
@@ -102,15 +101,15 @@
   background: transparent;
   color: #df1b57;
 
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
 
   cursor: pointer;
 }
 
 .salvar-btn {
-  height: 54px;
-  padding: 0 28px;
+  height: 48px;
+  padding: 0 24px;
 
   border: none;
   border-radius: 14px;
@@ -118,7 +117,7 @@
   background: #df1b57;
   color: white;
 
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
 
   cursor: pointer;
@@ -132,33 +131,33 @@
 .produto-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px;
+  gap: 22px;
 }
 
 .card {
   background: white;
   border: 1px solid #ddd;
-  border-radius: 24px;
-  padding: 28px;
+  border-radius: 22px;
+  padding: 24px;
 }
 
 .card-title {
-  font-size: 2rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #111;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .input-group label {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .input-group input,
@@ -168,9 +167,9 @@
   border: 1px solid #d9d9d9;
   border-radius: 14px;
 
-  padding: 16px;
+  padding: 14px;
 
-  font-size: 1rem;
+  font-size: 0.9rem;
   outline: none;
 
   transition: 0.2s;
@@ -188,10 +187,10 @@ textarea {
 
 .upload-box {
   width: 100%;
-  height: 320px;
+  height: 260px;
 
   border: 2px dashed #ff7ba5;
-  border-radius: 24px;
+  border-radius: 22px;
 
   background: #fffafb;
 
@@ -205,24 +204,20 @@ textarea {
   overflow: hidden;
 }
 
-.upload-icon {
-  font-size: 4rem;
-  color: #df1b57;
-  margin-bottom: 18px;
-}
-
 .upload-box h4 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
+  font-size: 1rem;
+  margin-bottom: 6px;
 }
 
 .upload-box p {
   color: #777;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
 }
 
 .upload-box small {
   color: #aaa;
+  font-size: 0.75rem;
 }
 
 .preview-img {
@@ -235,22 +230,23 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .switch-row h4 {
-  font-size: 1.3rem;
-  margin-bottom: 6px;
+  font-size: 1rem;
+  margin-bottom: 4px;
 }
 
 .switch-row p {
   color: #8a8a8a;
+  font-size: 0.82rem;
 }
 
 .switch {
   position: relative;
-  width: 64px;
-  height: 34px;
+  width: 58px;
+  height: 30px;
 }
 
 .switch input {
@@ -275,8 +271,8 @@ textarea {
   left: 4px;
   top: 4px;
 
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
 
   border-radius: 50%;
   background: white;
@@ -289,27 +285,31 @@ textarea {
 }
 
 .switch input:checked + .slider::before {
-  transform: translateX(30px);
+  transform: translateX(28px);
 }
 
 .tamanhos h4 {
-  font-size: 1.3rem;
-  margin-bottom: 18px;
+  font-size: 1rem;
+  margin-bottom: 14px;
 }
 
 .tags {
   display: flex;
-  gap: 14px;
+  gap: 12px;
 }
 
 .tags span {
   background: #df1b57;
   color: white;
   cursor: pointer;
-  padding: 10px 22px;
-  transition: .2s;
+
+  padding: 9px 18px;
+
+  transition: 0.2s;
+
   border-radius: 999px;
-  font-size: 0.95rem;
+
+  font-size: 0.82rem;
   font-weight: 700;
 }
 

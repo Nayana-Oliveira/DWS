@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 
 import { ProdutoService } from '../../services/produto';
 import { CarrinhoService } from '../../services/carrinho';
+import { 
+  LucideAngularModule, ChevronDown, Search, ArrowRight } from 'lucide-angular';
 
 @Component({
   selector: 'app-cardapio',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, LucideAngularModule],
   templateUrl: './cardapio.html',
   styleUrl: './cardapio.css',
 })

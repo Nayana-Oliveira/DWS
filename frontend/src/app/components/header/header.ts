@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.css',
 })
 export class Header implements OnInit {
-  usuarioNome = '';
+  usuarioNome = 'Login';
 
   logado = false;
 
@@ -22,20 +22,30 @@ export class Header implements OnInit {
 
     const tipo = localStorage.getItem('tipo_usuario');
 
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      this.usuarioNome = 'Login';
+
+      this.logado = false;
+
+      return;
+    }
+
+    this.logado = true;
+
     if (tipo === 'admin') {
       this.usuarioNome = 'Admin';
-
-      this.logado = true;
 
       this.isAdmin = true;
 
       return;
     }
 
-    if (nome) {
+    if (nome && nome !== 'undefined') {
       this.usuarioNome = nome;
-
-      this.logado = true;
+    } else {
+      this.usuarioNome = 'Login';
     }
   }
 }

@@ -78,7 +78,7 @@
       </div>
 
       <div class="acoes-loja">
-        <button class="btn-loja" routerLink="/">Ver Loja</button>
+        <button class="btn-loja ver-btn" routerLink="/">Ver Loja</button>
 
         <button class="btn-loja abrir-btn" (click)="abrirLoja()">Abrir Loja</button>
 
@@ -97,7 +97,6 @@
         <div class="estoque-item" *ngFor="let item of estoqueBaixo">
           <div class="item-left">
             <div class="item-icon">
-              {{ getIcone(item.nome) }}
             </div>
 
             <div class="item-info">

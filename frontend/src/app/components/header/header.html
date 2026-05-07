@@ -10,7 +10,7 @@
   </nav>
 
   <div class="right-area">
-    <a routerLink="/login" class="login-btn" *ngIf="!logado"> LOGIN </a>
+    <a *ngIf="!logado" routerLink="/login" class="login-btn"> Login </a>
 
     <a *ngIf="logado && !isAdmin" routerLink="/painel" class="user-link">
       {{ usuarioNome }}
