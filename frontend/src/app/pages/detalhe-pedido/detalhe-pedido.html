@@ -1,0 +1,33 @@
+<div class="container" *ngIf="produto">
+  <div class="esquerda">
+    <img [src]="produto.imagem" />
+  </div>
+
+  <div class="direita">
+    <h1>
+      {{ produto.nome }}
+    </h1>
+
+    <p>
+      {{ produto.descricao }}
+    </p>
+
+    <h2>R$ {{ produto.preco }}</h2>
+
+    <textarea [(ngModel)]="obs" placeholder="Observação"></textarea>
+
+    <div class="acoes">
+      <button (click)="diminuir()">-</button>
+
+      <span>
+        {{ quantidade }}
+      </span>
+
+      <button (click)="aumentar()">+</button>
+    </div>
+
+    <h3>Total: R$ {{ total.toFixed(2) }}</h3>
+
+    <button class="btn" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>
+  </div>
+</div>
