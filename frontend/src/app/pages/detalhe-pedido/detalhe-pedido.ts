@@ -13,13 +13,58 @@ import { CarrinhoService } from '../../services/carrinho';
   styleUrl: './detalhe-pedido.css',
 })
 export class DetalhePedido implements OnInit {
-  produto: any = null;
+  produto: any;
 
   quantidade = 1;
 
   obs = '';
 
-  carregando = true;
+  tamanhoSelecionado = 'G';
+
+  bordaSelecionada = 'Simples';
+
+  tamanhos = [
+    {
+      nome: 'P',
+      label: 'Brotinho',
+      fatias: 4,
+      multiplicador: 0.7,
+    },
+
+    {
+      nome: 'M',
+      label: 'Média',
+      fatias: 6,
+      multiplicador: 0.85,
+    },
+
+    {
+      nome: 'G',
+      label: 'Grande',
+      fatias: 8,
+      multiplicador: 1,
+    },
+  ];
+
+  bordas = [
+    {
+      nome: 'Simples',
+      descricao: 'Tradicional sem recheio',
+      preco: 0,
+    },
+
+    {
+      nome: 'Catupiry',
+      descricao: 'Borda generosa de requeijão',
+      preco: 12,
+    },
+
+    {
+      nome: 'Cheddar',
+      descricao: 'Borda cremosa de cheddar',
+      preco: 12,
+    },
+  ];
 
   constructor(
     private route: ActivatedRoute,
@@ -28,25 +73,31 @@ export class DetalhePedido implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.route.paramMap.subscribe((params) => {
+      const id = Number(params.get('id'));
 
-    this.service.buscarPorId(id).subscribe({
-      next: (res: any) => {
-        this.produto = {
-          ...res,
+      this.service.buscarPorId(id).subscribe({
+        next: (res: any) => {
+          this.produto = {
+            ...res,
 
-          imagem: `http://localhost:5010/${res.imagem}`,
-        };
+            imagem: `http://localhost:5010/${res.imagem.replace('public/', '')}`,
+          };
+        },
 
-        this.carregando = false;
-      },
-
-      error: (err: any) => {
-        console.error(err);
-
-        this.carregando = false;
-      },
+        error: (err: any) => {
+          console.error(err);
+        },
+      });
     });
+  }
+
+  selecionarTamanho(tamanho: string) {
+    this.tamanhoSelecionado = tamanho;
+  }
+
+  selecionarBorda(nome: string) {
+    this.bordaSelecionada = nome;
   }
 
   aumentar() {
@@ -59,8 +110,20 @@ export class DetalhePedido implements OnInit {
     }
   }
 
+  get precoTamanho() {
+    const tamanho = this.tamanhos.find((t) => t.nome === this.tamanhoSelecionado);
+
+    return Number(this.produto?.preco || 0) * (tamanho?.multiplicador || 1);
+  }
+
+  get precoBorda() {
+    const borda = this.bordas.find((b) => b.nome === this.bordaSelecionada);
+
+    return borda?.preco || 0;
+  }
+
   get total() {
-    return Number(this.produto?.preco || 0) * this.quantidade;
+    return (this.precoTamanho + this.precoBorda) * this.quantidade;
   }
 
   adicionarCarrinho() {
